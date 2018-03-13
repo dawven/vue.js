@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>v-model数据源绑定实例</title>
+</head>
+<body>
+<h1>v-model数据源绑定实例</h1>
+<div id="app">
+    <p>原始文本信息：{{message}}</p>
+    <h3>文本框</h3>
+    <p>v-model:<input type="text" v-model="message"></p>
+    <p>v-model.lazy:<input type="text" v-model.lazy="message"></p>
+    <p>v-model.number:<input type="text" v-model.number="message"></p>
+    <p>v-model.trim:<input type="text" v-model.trim="message"></p>
+    <h3>文本区域绑定</h3>
+    <textarea name="message" id="message" cols="30" rows="10" v-model="message"></textarea>
+    <h3>多选按钮绑定一个值</h3>
+    <input type="checkbox" id="isTrue" v-model="isTrue">
+    <label for="isTrue">{{isTrue}}</label>
+    <h3>多选按钮绑定一个数组</h3>
+    <p>
+        <input type="checkbox" id="JSPang" value="JSPang" v-model="my_Name">
+        <label for="JSPang">JSPang</label>
+        <input type="checkbox" id="panpan" value="panpan" v-model="my_Name">
+        <label for="panpan">panpan</label>
+        <input type="checkbox" id="dawven" value="dawven" v-model="my_Name">
+        <label for="dawven">dawven</label>
+        <input type="checkbox" id="viento" value="viento" v-model="my_Name">
+        <label for="viento">viento</label>
+    </p>
+    <label for="isTrue">{{my_Name}}</label>
+    <h3>单选按钮绑定</h3>
+    <input type="radio" id="one" value="男" v-model="sex">
+    <label for="one">男</label>
+    <input type="radio" id="two" value="女" v-model="sex">
+    <label for="one">女</label>
+    <p>{{sex}}</p>
+</div>
+</body>
+<script type="text/javascript">
+    var app=new Vue({
+        el:'#app',
+        data:{
+            message: 'hello world',
+            isTrue: false,
+            my_Name: [],
+            sex: '男'
+        }
+    })
+</script>
+</html>

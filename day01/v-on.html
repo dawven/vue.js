@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>v-on事件监听器</title>
+</head>
+
+<body>
+<h1>v-on事件监听器</h1>
+<hr>
+<div id="app">
+    本次比赛得分：{{count}}<br/>
+    <button @click="minus">减分</button>
+    <button @click="add">加分</button>
+    <input type="text" v-on:keyup.enter="onEnter" v-model="score">
+</div>
+</body>
+<script type="text/javascript">
+    var app=new Vue({
+        el:'#app',
+        data:{
+            count:0,
+            score:0
+        },
+        methods:{
+            minus:function () {
+                this.count--;
+            },
+            add:function () {
+                this.count++;
+            },
+            onEnter:function () {
+                this.count = this.count+parseInt(this.score)
+            }
+        }
+    })
+</script>
+</html>
