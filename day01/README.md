@@ -106,7 +106,7 @@ var app=new Vue({
  })
 ```
 ### 6、v-bind
-v-bind是处理HTML中的标签属性的，例如'<div></div>'就是一个标签，'<img>'也是一个标签，我们绑定'<img>上'的'src'进行动态赋值。
+v-bind是处理HTML中的标签属性的,进行动态赋值。  
 
 v-bind 缩写
 ```html
