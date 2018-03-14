@@ -85,7 +85,7 @@ Vue.set( target, key, value )
 设置对象的属性。如果对象是响应式的，确保属性被创建后也是响应式的，同时触发视图更新。这个方法主要用于避开 Vue 不能检测属性被添加的限制。
 
 #### 4、Vue的生命周期（钩子函数）
-Vue一共有10个生命周期函数，我们可以利用这些函数在vue的每个阶段都进行操作数据或者改变内容。
+Vue一共有10个生命周期函数，我们可以利用这些函数在vue的每个阶段都进行操作数据或者改变内容。  
 !()[https://github.com/dawven/vue.js/blob/master/day02/lifecycle.png]
 
 #### 5、Template 制作模版
