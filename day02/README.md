@@ -86,7 +86,7 @@ Vue.set( target, key, value )
 
 #### 4、Vue的生命周期（钩子函数）
 Vue一共有10个生命周期函数，我们可以利用这些函数在vue的每个阶段都进行操作数据或者改变内容。
-!()[lifecycle.png]
+!()[https://github.com/dawven/vue.js/blob/master/day02/lifecycle.png]
 
 #### 5、Template 制作模版
 
