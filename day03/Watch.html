@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>watch</title>
+</head>
+<body>
+<h1>watch 实例</h1>
+<div id="app">
+    <p>今天温度:{{temperature}}°C</p>
+    <p>穿衣建议:{{suggestion}}</p>
+    <p>
+        <button @click="add">加温</button>
+        <button @click="minus">减温</button>
+    </p>
+</div>
+</body>
+<script type="text/javascript">
+    var suggestion = ['T恤','夹克','棉袄']
+    var app=new Vue({
+        el:'#app',
+        data:{
+            temperature:10,
+            suggestion:'夹克'
+        },
+        methods:{
+            add:function () {
+                this.temperature+=5;
+            },
+            minus:function () {
+                this.temperature-=5;
+            }
+        },
+        // watch:{
+        //     temperature:function(newVal,oldVal){
+        //         if(newVal>=26){
+        //             this.suggestion=suggestion[0];
+        //         }else if(newVal<26 && newVal >=0)
+        //         {
+        //             this.suggestion=suggestion[1];
+        //         }else{
+        //             this.suggestion=suggestion[2];
+        //         }
+        //     }
+        // }
+    })
+    app.$watch('temperature',function (newVal, oldVal) {
+        if (newVal>=26){
+            this.suggestion = suggestion[0]
+        }else if (newVal<=0){
+            this.suggestion = suggestion[2]
+        }else{
+            this.suggestion = suggestion[1]
+        }
+    })
+
+</script>
+</html>

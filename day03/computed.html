@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>computed Option Demo</title>
+</head>
+<body>
+<h1>computed Option Demo</h1>
+<hr>
+<div id="app">{{newPrice}}</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#app',
+        data:{
+            price:100
+        },
+        computed:{
+            newPrice:function () {
+                return this.price = "￥"+this.price+"元";
+            }
+        }
+    })
+</script>
+</body>
+</html>

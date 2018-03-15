@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>helloworld</title>
+</head>
+<body>
+<h1>Helloworld 实例</h1>
+<div id="app">
+    <p>{{num}}</p>
+    <button @click="add(2)">ADD</button>
+    <p><btn @click.native="add(3)"></btn></p>
+    <button onclick="app.add(4)" >外部调用构造器里的方法</button>
+</div>
+</body>
+<script type="text/javascript">
+    var btn = {
+        template:`<button>组件add</button>`
+    }
+    var app=new Vue({
+        el:'#app',
+        data:{
+            num:10
+        },
+        methods:{
+            add:function (num) {
+                if (num!=''){
+                    this.num+=num
+                }else{
+                    this.num++
+                }
+            }
+        },
+        components:{
+            "btn":btn
+        }
+    })
+
+</script>
+</html>

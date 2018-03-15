@@ -97,7 +97,7 @@ new Profile().$mount('#mount-point')
 - 这种写法更像是在写HTML代码，就算不会写Vue的人，也可以制作页面。
 
 写在`<script>`标签里的模板
-这种写模板的方法，可以让模板文件从外部引入。常用
+- 这种写模板的方法，可以让模板文件从外部引入。常用
 ```javascript
 <script type="x-template" id="demo3">
     <h2 style="color:red">我是script标签模板</h2>
